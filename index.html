@@ -83,7 +83,7 @@ body {
 .dv-nav-row1::-webkit-scrollbar { display: none; }
 .dv-nav-left { display: flex; flex-shrink: 0; }
 .dv-nav-right { flex-shrink: 0; }
-.dv-nav-row2 { padding: 0 4px; border-top: 0.5px solid var(--border); display: none; overflow-x: auto; scrollbar-width: none; }
+.dv-nav-row2 { padding: 0 4px; border-top: 0.5px solid var(--border); display: none; overflow-x: auto; scrollbar-width: none; white-space: nowrap; }
 .dv-nav-row2::-webkit-scrollbar { display: none; }
 .dv-nav-row2.show { display: flex; }
 
@@ -107,7 +107,7 @@ body {
 .dv-section-title { font-size: 16px; font-weight: 600; color: var(--w100); margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-mid); }
 
 /* ══════════════════════════════════════
-   HOME COMPONENTS (WITH STUDIO GRID)
+   HOME COMPONENTS
 ══════════════════════════════════════ */
 .dv-wtext { font-size: 13px; color: var(--w200); line-height: 1.9; margin-bottom: 22px; font-style: italic; }
 .dv-home-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 32px; }
@@ -116,7 +116,6 @@ body {
 .dv-h-act-icon { font-size: 16px; font-weight: 600; color: var(--brand); margin-bottom: 4px; font-style: italic; }
 .dv-h-act-lbl { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; color: var(--w100); }
 
-/* 4-Box Studio Grid */
 .dv-studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-mid); border: 1px solid var(--border-mid); border-radius: 8px; overflow: hidden; margin-top: 16px; }
 .dv-sg-item { background: var(--bg2); padding: 24px 16px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s; }
 .dv-sg-item:hover, .dv-sg-item:active { background: var(--bg3); }
@@ -145,22 +144,43 @@ body {
 .dv-cast-list { font-size: 11px; color: var(--w300); margin-top: 4px; line-height: 1.5; font-style: italic; }
 
 /* ══════════════════════════════════════
-   INFO & CARDS
+   + INFO SUB-PANELS
 ══════════════════════════════════════ */
+.dv-info-container { display: none; }
+.dv-info-container.show { display: block; }
+
+.dv-faq-wrap { border-bottom: 1px solid var(--border-mid); }
+.dv-faq-btn { width: 100%; text-align: left; background: transparent; border: none; padding: 18px 0; font-family: var(--font); color: var(--w100); font-size: 14px; font-weight: 400; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.dv-faq-btn .arr { font-size: 18px; color: var(--w300); transition: transform 0.2s; }
+.dv-faq-btn.open .arr { transform: rotate(90deg); }
+.dv-faq-content { display: none; padding: 0 0 24px 0; color: var(--w200); font-size: 13px; line-height: 1.6; }
+.dv-faq-content.open { display: block; }
+.dv-faq-content strong { color: var(--brand); font-weight: 500; }
+
 .dv-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
 .dv-card-title { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; color: var(--w100); margin-bottom: 6px; }
 .dv-card-text { font-size: 13px; color: var(--w200); line-height: 1.6; }
 .dv-card-link { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--brand); text-decoration: none; font-weight: 500; }
 
-/* Hair & Costume List Styling */
+/* HC Specific Search Input */
+.dv-hc-search { all: unset; display: block; width: 100%; background-color: var(--bg); color: var(--w100); font-family: var(--font); font-size: 13px; padding: 10px 10px 10px 32px; border: 1px solid var(--border-mid); border-radius: 8px; box-sizing: border-box; transition: border-color 0.3s; }
+.dv-hc-search:focus { border-color: var(--brand); }
+.dv-hc-sicon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--w300); font-size: 14px; pointer-events: none; }
+
 .dv-hc-item { border-bottom: 1px solid var(--border-mid); padding: 12px 0; }
 .dv-hc-item:last-child { border-bottom: none; }
 .dv-hc-class { font-size: 13px; font-weight: 600; color: var(--w100); margin-bottom: 4px; }
+.dv-hc-class mark { background: var(--brand-faint); color: var(--brand); border-radius: 2px; padding: 0 2px; }
 .dv-hc-req { font-size: 12px; color: var(--w200); line-height: 1.5; }
 .dv-hc-req strong { color: var(--brand); font-weight: 500; }
 
+.dv-media-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 16px; }
+.dv-media-ph { aspect-ratio: 1; background: var(--bg2); border: 1px dashed var(--border-mid); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; color: var(--w300); transition: border-color 0.2s; cursor: pointer; }
+.dv-media-ph:hover { border-color: var(--brand); color: var(--brand); }
+.dv-media-ph svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
 /* ══════════════════════════════════════
-   SEARCH & FOOTER
+   GLOBAL SEARCH & FOOTER
 ══════════════════════════════════════ */
 #p-search { padding: 18px 16px 40px; }
 .dv-sfield-wrap { position: relative; margin-bottom: 8px; }
@@ -218,14 +238,22 @@ body {
       </button>
     </div>
   </div>
+  
   <div class="dv-nav-row2" id="nav-dates-sub">
     <button class="dv-stab on" id="st-jun20" onclick="sd('jun20')">/ JUNE 20</button>
     <button class="dv-stab" id="st-jun21" onclick="sd('jun21')">/ JUNE 21</button>
   </div>
+  
+  <div class="dv-nav-row2" id="nav-info-sub">
+    <button class="dv-stab on" id="it-faq" onclick="si('faq')">FAQ</button>
+    <button class="dv-stab" id="it-resources" onclick="si('resources')">RESOURCES</button>
+    <button class="dv-stab" id="it-hair" onclick="si('hair')">HAIR & COSTUME</button>
+    <button class="dv-stab" id="it-media" onclick="si('media')">MEDIA</button>
+  </div>
 </div>
 
 <div class="dv-panel show" id="p-home">
-  <div class="dv-lbl">WELCOME</div>
+  <div class="dv-lbl" style="margin-top: 0;">WELCOME</div>
   <div class="dv-wtext">
     Welcome to the VPS Big Dreams Showcase! We are excited for more performances with our Vancouver Performing Stars students. Select your performance date below to view the schedule.
   </div>
@@ -274,208 +302,69 @@ body {
 
 <div class="dv-panel" id="p-info">
   
-  <div class="dv-lbl">FAQ</div>
-  <div class="dv-card">
-    <div class="dv-card-title">When should we arrive?</div>
-    <div class="dv-card-text">Please arrive at the theatre exactly <strong>1 hour prior</strong> to your child's scheduled showtime. Ensure they arrive with their hair and makeup already done and dressed in their base costume.</div>
-  </div>
-  <div class="dv-card">
-    <div class="dv-card-title">What should we bring?</div>
-    <div class="dv-card-text">A clearly labelled water bottle and a small <strong>PEANUT-FREE</strong> snack. All items must be packed in a small bag labelled with the dancer's name. A quiet activity (like a book or game) is optional for the dressing room.</div>
-  </div>
-  <div class="dv-card">
-    <div class="dv-card-title">What should we NOT bring?</div>
-    <div class="dv-card-text">Please do not bring large jackets or sweaters into the dressing rooms. Jackets should be handed to parents at the door before entering.</div>
-  </div>
-  <div class="dv-card">
-    <div class="dv-card-title">Need Ballet Shoes & Tights?</div>
-    <div class="dv-card-text">If you are in need of gear, Ballet Shoes ($15) and Ballet Tights ($10) can be purchased in the coming weeks directly at the VPS studios.</div>
-  </div>
-
-  <div class="dv-lbl">RESOURCES</div>
-  <div class="dv-card">
-    <div class="dv-card-title">Stage Makeup Tutorial</div>
-    <div class="dv-card-text">Watch this quick guide to prepare your dancer's makeup for the bright stage lights.</div>
-    <a href="https://www.youtube.com/watch?v=M4qDly8yLKE" target="_blank" class="dv-card-link">Watch on YouTube →</a>
-  </div>
-  <div class="dv-card">
-    <div class="dv-card-title">Hair Tutorials</div>
-    <div class="dv-card-text">Learn how to create the perfect hairstyle for your dancer's class.</div>
-    <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Pigtail Low Braids Tutorial →</a>
-    <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Double Pigtail Buns Tutorial →</a>
-    <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Curls Half Up/Half Down Tutorial →</a>
-    <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">High Sock Bun Tutorial →</a>
+  <div id="info-faq" class="dv-info-container show">
+    <div class="dv-faq-wrap">
+      <button class="dv-faq-btn" onclick="tfaq(this)">When should we arrive? <span class="arr">›</span></button>
+      <div class="dv-faq-content">Please arrive at the theatre exactly <strong>1 hour prior</strong> to your child's scheduled showtime. Ensure they arrive with their hair and makeup already done and dressed in their base costume.</div>
+    </div>
+    <div class="dv-faq-wrap">
+      <button class="dv-faq-btn" onclick="tfaq(this)">What should dancers pack for backstage? <span class="arr">›</span></button>
+      <div class="dv-faq-content">A clearly labelled water bottle and a small <strong>PEANUT-FREE</strong> snack. All items must be packed in a small bag labelled with the dancer's name. A quiet activity (like a book or game) is optional for the dressing room.</div>
+    </div>
+    <div class="dv-faq-wrap">
+      <button class="dv-faq-btn" onclick="tfaq(this)">What should we NOT bring? <span class="arr">›</span></button>
+      <div class="dv-faq-content">Please do not bring large jackets or sweaters into the dressing rooms. Jackets should be handed to parents at the door before entering.</div>
+    </div>
+    <div class="dv-faq-wrap">
+      <button class="dv-faq-btn" onclick="tfaq(this)">Need Ballet Shoes & Tights? <span class="arr">›</span></button>
+      <div class="dv-faq-content">If you are in need of gear, Ballet Shoes ($15) and Ballet Tights ($10) can be purchased in the coming weeks directly at the VPS studios.</div>
+    </div>
   </div>
 
-  <div class="dv-lbl">HAIR & COSTUME BY CLASS</div>
-  <div class="dv-card" style="padding: 0 16px;">
-    
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">612 Mini Ballet Sat 10:45AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curled low pigtails</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
+  <div id="info-resources" class="dv-info-container">
+    <div class="dv-card">
+      <div class="dv-card-title">Stage Makeup Tutorial</div>
+      <div class="dv-card-text">Watch this quick guide to prepare your dancer's makeup for the bright stage lights.</div>
+      <a href="https://www.youtube.com/watch?v=M4qDly8yLKE" target="_blank" class="dv-card-link">Watch on YouTube →</a>
     </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">621 Junior Stars Musical Theatre Wed 3:45PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black/dark indoor runners, black socks, black tshirt, Gold costume</div>
+    <div class="dv-card">
+      <div class="dv-card-title">Hair Tutorials</div>
+      <div class="dv-card-text">Learn how to create the perfect hairstyle for your dancer's class.</div>
+      <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Pigtail Low Braids Tutorial →</a>
+      <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Double Pigtail Buns Tutorial →</a>
+      <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Curls Half Up/Half Down Tutorial →</a>
+      <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">High Sock Bun Tutorial →</a>
     </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">610 Junior Ballet Sat 10:00AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">624 Junior Ballet Wed 4:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">603 Junior Hip Hop Mon 3:45PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black shorts, Black Jazz shoes or dark runners, black ankle socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">614 Junior Hip Hop Sat 10:30AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">613 Mini Ballet Sat 11:30AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curls Half Up/Half Down</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">601 Mini Stars Musical Theatre Mon 3:45PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Low Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">634 Preschool Ballet/Acro Combo Fri 1:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> High Sock Bun</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">617 Junior Ballet Sun 10:45AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> High Sock Bun</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">620 Junior Acro Sat 2:15PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curls Half Up/Half Down</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">602 Junior Stars Musical Theatre Mon 4:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black/dark indoor runners, black socks, black tshirt, Gold costume</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">623 Mini Ballet Wed 3:45PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">Starjump Shine Sat 2:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Purple Dress Bodysuit, Ballet Shoes</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">631 Mini Ballet Mon 10:15AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black shorts, Black Jazz shoes or dark runners, black ankle socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">611 Mini Hip Hop Sat 9:45AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curled low pigtails</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">616 Mini Ballet Sun 10AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz Shoes, costume provided</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">605 Junior Acro Mon 5:15PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Purple Ballet Dress, Ballet Shoes</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">Starjump Glow Sat 1:00PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black/dark runners, black socks, black tshirt, Gold costume</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">633 Junior Hip Hop Tues 4:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curled high pigtails</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">609 Junior Tap/Jazz Fri 4:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curled high pigtails</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">625 Junior Stars Musical Theatre Mon 3:45PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curls Half Up/Half Down</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black/dark indoor runners, black socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">Starjump Glimmer Sun 11:15AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">622 Senior Stars Musical Theatre Wed 4:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curled low ponytail with centre part</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">618 Intermediate Ballet Sun 11:30AM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curled high pigtails</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">Starjump Glow Sun 1:00PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Purple Ballet Dress, Ballet Shoes</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">606 Intermediate Acro Mon 6:00PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Ballet Shoes</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">607 Senior Acro Mon 7:00PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">628 Senior Acro Sat 3:00PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curled low ponytail with centre part</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">626 Senior Stars Musical Theatre Mon 4:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">Starjump Shine Sun 2:30PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Black jazz shoes, black socks</div>
-    </div>
-    <div class="dv-hc-item">
-      <div class="dv-hc-class">604 Senior Hip Hop & Jazz Mon 5:15PM</div>
-      <div class="dv-hc-req"><strong>Hair:</strong> Curled low ponytail with centre part</div>
-      <div class="dv-hc-req"><strong>Costume:</strong> Beige tights and black socks</div>
-    </div>
-
   </div>
+
+  <div id="info-hair" class="dv-info-container">
+    <div class="dv-card" style="padding: 16px;">
+      
+      <div style="position: relative; margin-bottom: 16px;">
+        <span class="dv-hc-sicon">⌕</span>
+        <input class="dv-hc-search" id="hc-sf" type="search" placeholder="Find your class (e.g. Ballet or 612)..." oninput="shc(this.value)">
+      </div>
+
+      <div id="hc-list"></div>
+
+    </div>
+  </div>
+
+  <div id="info-media" class="dv-info-container">
+    <div class="dv-media-grid">
+      <div class="dv-media-ph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="dv-media-ph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="dv-media-ph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="dv-media-ph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="dv-media-ph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+      <div class="dv-media-ph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+    </div>
+  </div>
+
 </div>
 
 <div class="dv-panel" id="p-venues">
-  <div class="dv-lbl">THEATRE LOCATIONS</div>
+  <div class="dv-lbl" style="margin-top: 0;">THEATRE LOCATIONS</div>
   <div class="dv-card">
     <div class="dv-card-title" style="color: var(--brand);">Saturday, June 20</div>
     <div class="dv-card-text" style="font-size: 16px; font-weight: 500; color: var(--w100); margin-bottom: 4px;">VPS Theatre</div>
@@ -507,11 +396,17 @@ body {
 function gp(id){
   ['home','dates','info','venues','search'].forEach(p=>document.getElementById('p-'+p).style.display = p===id?'block':'none');
   ['home','dates','info','venues','search'].forEach(t=>document.getElementById('pt-'+t).classList.toggle('on',t===id));
-  const subNav = document.getElementById('nav-dates-sub');
+  const dateSub = document.getElementById('nav-dates-sub');
+  const infoSub = document.getElementById('nav-info-sub');
+  dateSub.classList.remove('show');
+  infoSub.classList.remove('show');
   if(id === 'dates') {
-    subNav.classList.add('show');
+    dateSub.classList.add('show');
     if(!document.getElementById('st-jun21').classList.contains('on')) sd('jun20');
-  } else { subNav.classList.remove('show'); }
+  } else if (id === 'info') {
+    infoSub.classList.add('show');
+    if(!['resources','hair','media'].some(tab => document.getElementById('it-'+tab).classList.contains('on'))) si('faq');
+  }
   if(id==='search') setTimeout(()=>document.getElementById('sf').focus(),80);
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -524,13 +419,23 @@ function sd(dateId) {
   });
 }
 
+function si(infoId) {
+  ['faq', 'resources', 'hair', 'media'].forEach(i => document.getElementById('it-'+i).classList.toggle('on', i === infoId));
+  ['faq', 'resources', 'hair', 'media'].forEach(i => {
+    const el = document.getElementById('info-'+i);
+    if(i === infoId) el.classList.add('show'); else el.classList.remove('show');
+  });
+}
+
 function tf(btn) { btn.classList.toggle('open'); btn.nextElementSibling.classList.toggle('open'); }
+function tfaq(btn) { btn.classList.toggle('open'); btn.nextElementSibling.classList.toggle('open'); }
 function setMode(m){ 
   document.getElementById('mbtn-dark').classList.toggle('on',m==='dark'); 
   document.getElementById('mbtn-light').classList.toggle('on',m==='light'); 
   if (m === 'light') document.documentElement.classList.add('light-mode'); else document.documentElement.classList.remove('light-mode');
 }
 
+/* ── MAIN SHOW DATA ── */
 const D = [
   {s:"s-jun20-10am", t:"In the Golden Afternoon", c:"612 Mini Ballet Sat 10:45AM", cast:"Myra Chen, Isla Chiang, Amelia Coronel, Sophie Costello, Ella Gan, Emerson Graham, Mia McMaster, Neve Wilson, Audrey Jung, Margot Williams"},
   {s:"s-jun20-10am", t:"We’re All Made of Stars", c:"621 Junior Stars Musical Theatre Wed 3:45PM", cast:"Camille Barao, Peyton Bates, Zoey Blazenko, Paige Claassen, Margaret Kelly, Mia Lam, Gemma McArthur, Zoe Rodriguez, Ava Moore"},
@@ -566,8 +471,45 @@ const D = [
   {s:"s-jun21-5pm", t:"I Just Might", c:"604 Senior Hip Hop & Jazz Mon 5:15PM", cast:"Hailey Anderson, Ruby Blunderfield, Fiona Cindric, Ella Hird, Arianna Hung, Priscila Novelo Olmos, Salomé Raffin, Liberty Mai"}
 ];
 
+/* ── HAIR & COSTUME DATA (Pre-Sorted Alphabetically) ── */
+const HC = [
+  {c: "601 Mini Stars Musical Theatre Mon 3:45PM", h: "Low Double Pigtail Buns", cost: "Bare feet, costume provided"},
+  {c: "602 Junior Stars Musical Theatre Mon 4:30PM", h: "Pigtail low braids", cost: "Black/dark indoor runners, black socks, black tshirt, Gold costume"},
+  {c: "603 Junior Hip Hop Mon 3:45PM", h: "Pigtail low braids", cost: "Black shorts, Black Jazz shoes or dark runners, black ankle socks"},
+  {c: "604 Senior Hip Hop & Jazz Mon 5:15PM", h: "Curled low ponytail with centre part", cost: "Beige tights and black socks"},
+  {c: "605 Junior Acro Mon 5:15PM", h: "Double Pigtail Buns", cost: "Ballet tights, Purple Ballet Dress, Ballet Shoes"},
+  {c: "606 Intermediate Acro Mon 6:00PM", h: "Double Pigtail Buns", cost: "Ballet tights, Ballet Shoes"},
+  {c: "607 Senior Acro Mon 7:00PM", h: "Double Pigtail Buns", cost: "Bare feet"},
+  {c: "609 Junior Tap/Jazz Fri 4:30PM", h: "Curled high pigtails", cost: "Ballet tights, Doll Tutu Bodysuit, Ballet Shoes"},
+  {c: "610 Junior Ballet Sat 10:00AM", h: "Pigtail low braids", cost: "Black Jazz shoes or dark indoor runners, black ankle socks"},
+  {c: "611 Mini Hip Hop Sat 9:45AM", h: "Curled low pigtails", cost: "Ballet tights, Doll Tutu Bodysuit, Ballet Shoes"},
+  {c: "612 Mini Ballet Sat 10:45AM", h: "Curled low pigtails", cost: "Ballet tights, Doll Tutu Bodysuit, Ballet Shoes"},
+  {c: "613 Mini Ballet Sat 11:30AM", h: "Curls Half Up/Half Down", cost: "Black Jazz shoes or dark indoor runners, black ankle socks"},
+  {c: "614 Junior Hip Hop Sat 10:30AM", h: "Double Pigtail Buns", cost: "Black Jazz shoes or dark indoor runners, black ankle socks"},
+  {c: "616 Mini Ballet Sun 10AM", h: "Double Pigtail Buns", cost: "Black Jazz Shoes, costume provided"},
+  {c: "617 Junior Ballet Sun 10:45AM", h: "High Sock Bun", cost: "Bare feet, costume provided"},
+  {c: "618 Intermediate Ballet Sun 11:30AM", h: "Curled high pigtails", cost: "Ballet tights, Doll Tutu Bodysuit, Ballet Shoes"},
+  {c: "620 Junior Acro Sat 2:15PM", h: "Curls Half Up/Half Down", cost: "Bare feet, costume provided"},
+  {c: "621 Junior Stars Musical Theatre Wed 3:45PM", h: "Pigtail low braids", cost: "Black/dark indoor runners, black socks, black tshirt, Gold costume"},
+  {c: "622 Senior Stars Musical Theatre Wed 4:30PM", h: "Curled low ponytail with centre part", cost: "Bare feet"},
+  {c: "623 Mini Ballet Wed 3:45PM", h: "Double Pigtail Buns", cost: "Black Jazz shoes or dark indoor runners, black ankle socks"},
+  {c: "624 Junior Ballet Wed 4:30PM", h: "Double Pigtail Buns", cost: "Black Jazz shoes or dark indoor runners, black ankle socks"},
+  {c: "625 Junior Stars Musical Theatre Mon 3:45PM", h: "Curls Half Up/Half Down", cost: "Black/dark indoor runners, black socks"},
+  {c: "626 Senior Stars Musical Theatre Mon 4:30PM", h: "Double Pigtail Buns", cost: "Bare feet"},
+  {c: "628 Senior Acro Sat 3:00PM", h: "Curled low ponytail with centre part", cost: "Bare feet"},
+  {c: "631 Mini Ballet Mon 10:15AM", h: "Pigtail low braids", cost: "Black shorts, Black Jazz shoes or dark runners, black ankle socks"},
+  {c: "633 Junior Hip Hop Tues 4:30PM", h: "Curled high pigtails", cost: "Ballet tights, Doll Tutu Bodysuit, Ballet Shoes"},
+  {c: "634 Preschool Ballet/Acro Combo Fri 1:30PM", h: "High Sock Bun", cost: "Bare feet, costume provided"},
+  {c: "Starjump Glimmer Sun 11:15AM", h: "Double Pigtail Buns", cost: "Bare feet, costume provided"},
+  {c: "Starjump Glow Sat 1:00PM", h: "Pigtail low braids", cost: "Black/dark runners, black socks, black tshirt, Gold costume"},
+  {c: "Starjump Glow Sun 1:00PM", h: "Double Pigtail Buns", cost: "Ballet tights, Purple Ballet Dress, Ballet Shoes"},
+  {c: "Starjump Shine Sat 2:30PM", h: "Double Pigtail Buns", cost: "Ballet tights, Purple Dress Bodysuit, Ballet Shoes"},
+  {c: "Starjump Shine Sun 2:30PM", h: "Pigtail low braids", cost: "Black jazz shoes, black socks"}
+];
+
 function hi(t,q){ if(!q||!t) return t||''; return t.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>'); }
 function rh(d, i, q){ return `<div class="dv-row"><div class="dv-rnum">${String(i).padStart(2,'0')}</div><div><div class="dv-rtitle">${hi(d.t,q)}</div><div class="dv-rclass">${hi(d.c,q)}</div><div class="dv-cast-list">${hi(d.cast,q)}</div></div></div>`; }
+function rhc(d, q){ return `<div class="dv-hc-item"><div class="dv-hc-class">${hi(d.c,q)}</div><div class="dv-hc-req"><strong>Hair:</strong> ${hi(d.h,q)}</div><div class="dv-hc-req"><strong>Costume:</strong> ${hi(d.cost,q)}</div></div>`; }
 
 function ra(){
   ['s-jun20-10am','s-jun20-12pm','s-jun20-130pm','s-jun20-330pm','s-jun20-5pm','s-jun21-2pm','s-jun21-5pm'].forEach(id => document.getElementById(id).innerHTML = '');
@@ -583,7 +525,17 @@ function ds(q){
   nr.style.display=m.length?'none':'block';
   sr.innerHTML=m.map((d, i)=>rh(d, i+1, v)).join('');
 }
+
+function shc(q){
+  const v = q.trim().toLowerCase();
+  const m = HC.filter(d => [d.c, d.h, d.cost].join(' ').toLowerCase().includes(v));
+  document.getElementById('hc-list').innerHTML = m.length 
+    ? m.map(d => rhc(d, v)).join('') 
+    : '<div style="padding: 20px 0; text-align: center; color: var(--w300); font-size: 13px;">No classes found.</div>';
+}
+
 ra();
+shc(''); // Initialize Hair & Costume list on load
 </script>
 </body>
 </html>
