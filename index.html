@@ -1,0 +1,68 @@
+<div class="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between font-sans antialiased relative overflow-hidden">
+  
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-emerald-500/10 via-transparent to-transparent blur-3xl pointer-events-none"></div>
+
+  <header class="relative z-10 border-b border-slate-900 bg-slate-950/70 backdrop-blur-md px-6 md:px-12 py-5 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <div class="h-9 px-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/20">
+        <span class="text-slate-950 font-black tracking-tighter text-sm">DV</span>
+      </div>
+      <span class="text-xl font-black tracking-widest text-white">DANCE<span class="text-emerald-400 font-light">VAULT</span></span>
+    </div>
+    
+    <button class="text-xs md:text-sm font-semibold text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-900/50 px-4 py-2 rounded-xl transition-all cursor-pointer">
+      Studio Owner Portal →
+    </button>
+  </header>
+
+  <main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 py-16 max-w-4xl mx-auto text-center">
+    
+    <div class="inline-flex items-center space-x-2 bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-full mb-6 shadow-inner">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="text-xs font-semibold text-slate-300 tracking-wide uppercase">The Permanent Performance Archive</span>
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-none mb-6">
+      Your Dancer's Memories, <br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400">Preserved Forever.</span>
+    </h1>
+    
+    <p class="text-slate-400 text-base md:text-lg max-w-xl mb-12 font-medium leading-relaxed">
+      Unlock a secure, multi-year digital memory box organized seamlessly by your child's classes. Beautiful, high-resolution downloads at your fingertips.
+    </p>
+
+    <div class="w-full max-w-md bg-slate-900/40 border border-slate-800/80 p-8 rounded-3xl shadow-2xl backdrop-blur-xl relative group">
+      <div class="absolute inset-0 bg-gradient-to-b from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+      
+      <label for="vault-code" class="block text-xs font-bold uppercase tracking-wider text-slate-400 text-left mb-3 pl-1">
+        Enter Secure Access Code
+      </label>
+      
+      <div class="flex flex-col space-y-4 relative z-10">
+        <div class="relative">
+          <input 
+            type="text" 
+            id="vault-code" 
+            placeholder="e.g., WARM-A7X9" 
+            maxlength="9"
+            class="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-4 text-white text-center font-mono text-xl font-bold tracking-widest uppercase focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/30 transition-all placeholder:text-slate-700 placeholder:font-sans placeholder:text-base placeholder:tracking-normal"
+          >
+        </div>
+        
+        <button class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold text-base py-4 rounded-2xl transition-all shadow-xl shadow-emerald-500/10 hover:shadow-emerald-400/20 active:scale-[0.99] cursor-pointer">
+          Open Your Vault
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="relative z-10 border-t border-slate-900 bg-slate-950/40 px-6 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+    <div class="flex items-center space-x-1.5">
+      <span>🔒</span>
+      <p class="font-medium">Private, invitation-only galleries. Completely hidden from public search engines.</p>
+    </div>
+    <p class="font-mono">&copy; 2026 Dance Vault. All rights reserved.</p>
+  </footer>
+
+</div>
