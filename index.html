@@ -9,7 +9,7 @@
 <title>Dance Vault - VPS Big Dreams</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════
    RESET & ROOT (DARK MODE DEFAULT)
@@ -37,100 +37,37 @@
    LIGHT MODE VARIABLES
 ══════════════════════════════════════ */
 html.light-mode {
-  --bg: #f8f7fa;
-  --bg2: #f0eef5;
-  --bg3: #e6e3f0;
-  --brand: #008f96; 
-  --brand-dim: #006f75;
-  --brand-faint: #e0f7f8;
-  --border: #d7d3e3;
-  --border-mid: #bfb8d1;
-  --w100: #140f21; 
-  --w200: #2a2240;
-  --w300: #51447a;
+  --bg: #f8f7fa; --bg2: #f0eef5; --bg3: #e6e3f0;
+  --brand: #008f96; --brand-dim: #006f75; --brand-faint: #e0f7f8;
+  --border: #d7d3e3; --border-mid: #bfb8d1;
+  --w100: #140f21; --w200: #2a2240; --w300: #51447a;
   --header-bg: #000000; 
 }
 
 html { background: var(--bg); transition: background-color 0.3s ease; }
 body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--w100);
-  font-size: 14px;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  overscroll-behavior: none;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  font-family: var(--font); background: var(--bg); color: var(--w100);
+  font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none; transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 /* ══════════════════════════════════════
-   HEADER
+   HEADER & BANNER & EVENT INFO
 ══════════════════════════════════════ */
-.dvh {
-  background: var(--header-bg);
-  padding: calc(10px + var(--safe-top)) 16px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #111;
-  position: sticky;
-  top: 0;
-  z-index: 200;
-}
+.dvh { background: var(--header-bg); padding: calc(10px + var(--safe-top)) 16px 10px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #111; position: sticky; top: 0; z-index: 200; }
 .dvh-brand { display: flex; align-items: baseline; gap: 5px; }
 .dvh-dv { font-size: 11px; letter-spacing: 0.3em; color: #ffffff; font-weight: 600; }
 .dvh-sep { color: #444; font-size: 10px; }
 .dvh-prog { font-size: 10px; letter-spacing: 0.2em; color: var(--brand); font-weight: 300; }
 .dvh-right { display: flex; gap: 4px; }
-.dv-mbtn {
-  font-family: var(--font);
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 0.5px solid #333;
-  background: var(--header-bg);
-  color: #777;
-  cursor: pointer;
-  outline: none;
-  -webkit-appearance: none;
-  appearance: none;
-  transition: all 0.2s;
-}
+.dv-mbtn { font-family: var(--font); font-size: 9px; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 20px; border: 0.5px solid #333; background: var(--header-bg); color: #777; cursor: pointer; outline: none; transition: all 0.2s; }
 .dv-mbtn.on { border-color: var(--brand); color: var(--brand); }
 
-/* ══════════════════════════════════════
-   BANNER
-══════════════════════════════════════ */
-.dv-banner {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1056 / 480; 
-  overflow: hidden;
-  background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--border);
-}
-.dv-banner::after {
-  content: 'VPS BIG DREAMS BANNER';
-  font-size: 14px;
-  letter-spacing: 0.2em;
-  color: var(--w300);
-}
+.dv-banner { position: relative; width: 100%; aspect-ratio: 1056 / 480; overflow: hidden; background: var(--bg); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); }
+.dv-banner::after { content: 'VPS BIG DREAMS BANNER'; font-size: 14px; letter-spacing: 0.2em; color: var(--w300); }
 .dv-banner img { width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0; left: 0; display: block; }
 
-/* ══════════════════════════════════════
-   EVENT INFO
-══════════════════════════════════════ */
-.dv-event {
-  padding: 14px 16px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-}
+.dv-event { padding: 14px 16px 16px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .dv-estudio { font-size: 9px; letter-spacing: 0.28em; color: var(--brand); font-weight: 600; margin-bottom: 5px; }
 .dv-etitle { font-size: clamp(22px, 6vw, 28px); font-weight: 600; color: var(--w100); line-height: 1.1; margin-bottom: 5px; }
 .dv-esub { font-size: 11px; color: var(--w200); line-height: 1.7; }
@@ -141,61 +78,23 @@ body {
 /* ══════════════════════════════════════
    NAV
 ══════════════════════════════════════ */
-.dv-nav {
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
-  position: sticky;
-  top: 44px;
-  z-index: 190;
-  transition: background-color 0.3s;
-}
-.dv-nav-row1 {
-  padding: 0 4px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
+.dv-nav { border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 44px; z-index: 190; transition: background-color 0.3s; }
+.dv-nav-row1 { padding: 0 4px; display: flex; align-items: center; justify-content: space-between; overflow-x: auto; scrollbar-width: none; }
 .dv-nav-row1::-webkit-scrollbar { display: none; }
 .dv-nav-left { display: flex; flex-shrink: 0; }
 .dv-nav-right { flex-shrink: 0; }
-.dv-nav-row2 {
-  padding: 0 4px;
-  border-top: 0.5px solid var(--border);
-  display: none;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
+.dv-nav-row2 { padding: 0 4px; border-top: 0.5px solid var(--border); display: none; overflow-x: auto; scrollbar-width: none; }
 .dv-nav-row2::-webkit-scrollbar { display: none; }
 .dv-nav-row2.show { display: flex; }
 
-.dv-ptab, .dv-stab, .dv-srch {
-  all: unset;
-  font-family: var(--font) !important;
-  background: transparent !important;
-  border: none !important;
-  outline: none !important;
-  cursor: pointer;
-  white-space: nowrap;
-  display: inline-block;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  transition: color 0.2s;
-}
+.dv-ptab, .dv-stab, .dv-srch { all: unset; font-family: var(--font) !important; background: transparent !important; cursor: pointer; white-space: nowrap; display: inline-block; transition: color 0.2s; }
 .dv-ptab { font-size: 10px !important; font-weight: 400 !important; letter-spacing: 0.15em !important; padding: 13px 12px 11px !important; color: var(--w300) !important; }
 .dv-ptab:hover, .dv-ptab:active { color: var(--w200) !important; }
 .dv-ptab.on { color: var(--w100) !important; font-weight: 600 !important; }
-
 .dv-srch { font-size: 10px !important; font-weight: 400 !important; letter-spacing: 0.15em !important; padding: 13px 12px 11px !important; color: var(--w300) !important; display: inline-flex !important; align-items: center; gap: 5px; }
-.dv-srch:hover, .dv-srch:active { color: var(--w200) !important; }
 .dv-srch.on { color: var(--w100) !important; font-weight: 600 !important; }
-.dv-srch svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; pointer-events: none; }
-
+.dv-srch svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; }
 .dv-stab { font-size: 9px !important; font-weight: 400 !important; letter-spacing: 0.12em !important; padding: 9px 10px 7px !important; color: var(--w300) !important; }
-.dv-stab:hover, .dv-stab:active { color: var(--w200) !important; }
 .dv-stab.on { color: var(--w100) !important; font-weight: 600 !important; }
 
 /* ══════════════════════════════════════
@@ -203,40 +102,35 @@ body {
 ══════════════════════════════════════ */
 .dv-panel { display: none; padding: 18px 16px 40px; }
 .dv-panel.show { display: block; }
-
-.dv-lbl { font-size: 8px; letter-spacing: 0.22em; color: var(--brand); font-weight: 600; margin-bottom: 10px; display: block; }
+.dv-lbl { font-size: 10px; letter-spacing: 0.22em; color: var(--brand); font-weight: 600; margin-bottom: 12px; margin-top: 32px; display: block; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 8px;}
+.dv-lbl:first-child { margin-top: 0; }
 .dv-section-title { font-size: 16px; font-weight: 600; color: var(--w100); margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-mid); }
-.dv-section-title:first-child { margin-top: 0; }
 
 /* ══════════════════════════════════════
-   HOME COMPONENTS
+   HOME COMPONENTS (WITH STUDIO GRID)
 ══════════════════════════════════════ */
 .dv-wtext { font-size: 13px; color: var(--w200); line-height: 1.9; margin-bottom: 22px; font-style: italic; }
-
-/* Home Date Blocks */
 .dv-home-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 32px; }
-.dv-h-act {
-  background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; 
-  text-align: center; cursor: pointer; transition: background 0.2s, border-color 0.2s;
-}
+.dv-h-act { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; cursor: pointer; transition: background 0.2s; }
 .dv-h-act:active { background: var(--border); }
 .dv-h-act-icon { font-size: 16px; font-weight: 600; color: var(--brand); margin-bottom: 4px; font-style: italic; }
 .dv-h-act-lbl { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; color: var(--w100); }
 
-/* Studio Contact Footer */
-.dv-contact-grid { display: grid; gap: 16px; border-top: 1px solid var(--border); padding-top: 24px; }
-.dv-c-row { display: flex; align-items: flex-start; gap: 12px; font-size: 12px; color: var(--w200); }
-.dv-c-lbl { width: 60px; font-size: 9px; letter-spacing: 0.1em; color: var(--w300); font-weight: 600; text-transform: uppercase; padding-top: 2px; }
-.dv-c-row a { color: var(--brand); text-decoration: none; font-weight: 500; }
+/* 4-Box Studio Grid */
+.dv-studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-mid); border: 1px solid var(--border-mid); border-radius: 8px; overflow: hidden; margin-top: 16px; }
+.dv-sg-item { background: var(--bg2); padding: 24px 16px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s; }
+.dv-sg-item:hover, .dv-sg-item:active { background: var(--bg3); }
+.dv-sg-icon { color: var(--w200); }
+.dv-sg-title { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; color: var(--w100); text-transform: uppercase; }
+.dv-sg-sub { font-size: 10px; color: var(--w300); }
 
 /* ══════════════════════════════════════
    DATES / SHOWS PANEL
 ══════════════════════════════════════ */
 .dv-date-container { display: none; }
 .dv-date-container.show { display: block; }
-
 .dv-show-folder { margin-bottom: 8px; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-.dv-show-btn { width: 100%; text-align: left; background: transparent; border: none; padding: 14px 16px; font-family: var(--font); color: var(--brand); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; display: flex; justify-content: space-between; align-items: center; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.dv-show-btn { width: 100%; text-align: left; background: transparent; border: none; padding: 14px 16px; font-family: var(--font); color: var(--brand); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
 .dv-show-btn .arr { font-size: 18px; transition: transform 0.2s; color: var(--w300); }
 .dv-show-btn.open .arr { transform: rotate(90deg); }
 .dv-show-content { display: none; padding: 0 16px 10px; background: var(--bg); border-top: 1px solid var(--border); }
@@ -251,45 +145,44 @@ body {
 .dv-cast-list { font-size: 11px; color: var(--w300); margin-top: 4px; line-height: 1.5; font-style: italic; }
 
 /* ══════════════════════════════════════
-   INFO & VENUES CARDS
+   INFO & CARDS
 ══════════════════════════════════════ */
 .dv-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-.dv-card-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--brand); margin-bottom: 8px; text-transform: uppercase; }
+.dv-card-title { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; color: var(--w100); margin-bottom: 6px; }
 .dv-card-text { font-size: 13px; color: var(--w200); line-height: 1.6; }
 .dv-card-link { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--brand); text-decoration: none; font-weight: 500; }
 
+/* Hair & Costume List Styling */
+.dv-hc-item { border-bottom: 1px solid var(--border-mid); padding: 12px 0; }
+.dv-hc-item:last-child { border-bottom: none; }
+.dv-hc-class { font-size: 13px; font-weight: 600; color: var(--w100); margin-bottom: 4px; }
+.dv-hc-req { font-size: 12px; color: var(--w200); line-height: 1.5; }
+.dv-hc-req strong { color: var(--brand); font-weight: 500; }
+
 /* ══════════════════════════════════════
-   SEARCH
+   SEARCH & FOOTER
 ══════════════════════════════════════ */
 #p-search { padding: 18px 16px 40px; }
 .dv-sfield-wrap { position: relative; margin-bottom: 8px; }
-.dv-sfield, .dv-sfield:focus { all: unset; display: block; width: 100%; background-color: var(--bg); color: var(--w100); font-family: var(--font); font-size: 14px; padding: 12px 0 12px 26px; border-bottom: 1px solid var(--border-mid); box-sizing: border-box; transition: border-color 0.3s; }
+.dv-sfield, .dv-sfield:focus { all: unset; display: block; width: 100%; background-color: var(--bg); color: var(--w100); font-family: var(--font); font-size: 14px; padding: 12px 0 12px 26px; border-bottom: 1px solid var(--border-mid); box-sizing: border-box; }
 .dv-sfield:focus { border-bottom-color: var(--brand); }
 .dv-sicon { position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: var(--w300); font-size: 14px; pointer-events: none; }
 .dv-shint { font-size: 10px; color: var(--w300); letter-spacing: 0.04em; margin-bottom: 14px; }
 .dv-nores { text-align: center; padding: 30px; font-size: 14px; color: var(--w300); display: none; }
 
-/* ══════════════════════════════════════
-   FOOTER
-══════════════════════════════════════ */
 .dv-foot { background: var(--header-bg); padding: 12px 16px calc(12px + var(--safe-bottom)); display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #111; }
 .dv-foot-l { font-size: 8px; letter-spacing: 0.2em; color: #666; }
 .dv-foot-g { color: var(--brand); }
 .dv-foot-r { font-size: 8px; color: #555; letter-spacing: 0.1em; }
 
-@media (min-width: 600px) {
-  body { max-width: 800px; margin: 0 auto; box-shadow: 0 0 60px rgba(0,0,0,0.5); }
-  .dv-ptab { font-size: 10px !important; padding: 13px 14px 11px !important; }
-}
+@media (min-width: 600px) { body { max-width: 800px; margin: 0 auto; box-shadow: 0 0 60px rgba(0,0,0,0.5); } }
 </style>
 </head>
 <body>
 
 <div class="dvh">
   <div class="dvh-brand">
-    <span class="dvh-dv">DANCE VAULT</span>
-    <span class="dvh-sep">·</span>
-    <span class="dvh-prog">PROGRAMS</span>
+    <span class="dvh-dv">DANCE VAULT</span><span class="dvh-sep">·</span><span class="dvh-prog">PROGRAMS</span>
   </div>
   <div class="dvh-right">
     <button class="dv-mbtn on" id="mbtn-dark" onclick="setMode('dark')">Dark</button>
@@ -321,8 +214,7 @@ body {
     </div>
     <div class="dv-nav-right">
       <button class="dv-srch" id="pt-search" onclick="gp('search')">
-        <svg viewBox="0 0 16 16"><circle cx="6.5" cy="6.5" r="4.5"/><line x1="10" y1="10" x2="14" y2="14"/></svg>
-        SEARCH
+        <svg viewBox="0 0 16 16"><circle cx="6.5" cy="6.5" r="4.5"/><line x1="10" y1="10" x2="14" y2="14"/></svg> SEARCH
       </button>
     </div>
   </div>
@@ -339,37 +231,32 @@ body {
   </div>
 
   <div class="dv-home-actions">
-    <div class="dv-h-act" onclick="gp('dates'); sd('jun20');">
-      <div class="dv-h-act-icon">/</div>
-      <div class="dv-h-act-lbl">JUNE 20</div>
-    </div>
-    <div class="dv-h-act" onclick="gp('dates'); sd('jun21');">
-      <div class="dv-h-act-icon">//</div>
-      <div class="dv-h-act-lbl">JUNE 21</div>
-    </div>
+    <div class="dv-h-act" onclick="gp('dates'); sd('jun20');"><div class="dv-h-act-icon">/</div><div class="dv-h-act-lbl">JUNE 20</div></div>
+    <div class="dv-h-act" onclick="gp('dates'); sd('jun21');"><div class="dv-h-act-icon">//</div><div class="dv-h-act-lbl">JUNE 21</div></div>
   </div>
 
-  <div class="dv-contact-grid">
-    <div class="dv-c-row">
-      <div class="dv-c-lbl">Website</div>
-      <div><a href="https://www.performingstars.ca/" target="_blank">performingstars.ca</a></div>
-    </div>
-    <div class="dv-c-row">
-      <div class="dv-c-lbl">Contact</div>
-      <div><a href="mailto:info@performingstars.ca">info@performingstars.ca</a></div>
-    </div>
-    <div class="dv-c-row">
-      <div class="dv-c-lbl">Social</div>
-      <div style="display: flex; gap: 16px;">
-        <a href="https://www.instagram.com/vanperformstars/?hl=en" target="_blank">Instagram</a>
-        <a href="https://www.facebook.com/vanperformingstars/" target="_blank">Facebook</a>
-      </div>
-    </div>
+  <div class="dv-lbl">STUDIO</div>
+  <div class="dv-studio-grid">
+    <a href="https://www.performingstars.ca/" target="_blank" class="dv-sg-item">
+      <svg class="dv-sg-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+      <div><div class="dv-sg-title">WEBSITE</div><div class="dv-sg-sub">performingstars.ca</div></div>
+    </a>
+    <a href="mailto:info@performingstars.ca" class="dv-sg-item">
+      <svg class="dv-sg-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <div><div class="dv-sg-title">EMAIL</div><div class="dv-sg-sub">info@performingstars.ca</div></div>
+    </a>
+    <a href="https://www.instagram.com/vanperformstars/?hl=en" target="_blank" class="dv-sg-item">
+      <svg class="dv-sg-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+      <div><div class="dv-sg-title">INSTAGRAM</div><div class="dv-sg-sub">@vanperformstars</div></div>
+    </a>
+    <a href="https://www.facebook.com/vanperformingstars/" target="_blank" class="dv-sg-item">
+      <svg class="dv-sg-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      <div><div class="dv-sg-title">FACEBOOK</div><div class="dv-sg-sub">vanperformingstars</div></div>
+    </a>
   </div>
 </div>
 
 <div class="dv-panel" id="p-dates">
-  
   <div id="dates-jun20" class="dv-date-container show">
     <div class="dv-section-title">SATURDAY, JUNE 20</div>
     <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 1 • 10:00 AM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun20-10am"></div></div>
@@ -378,73 +265,226 @@ body {
     <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 4 • 3:30 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun20-330pm"></div></div>
     <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 5 • 5:00 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun20-5pm"></div></div>
   </div>
-
   <div id="dates-jun21" class="dv-date-container">
     <div class="dv-section-title">SUNDAY, JUNE 21</div>
     <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 1 • 2:00 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun21-2pm"></div></div>
     <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 2 • 5:00 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun21-5pm"></div></div>
   </div>
-
 </div>
 
 <div class="dv-panel" id="p-info">
-  <div class="dv-lbl">PERFORMANCE INFO</div>
   
+  <div class="dv-lbl">FAQ</div>
   <div class="dv-card">
-    <div class="dv-card-title">Arrival Time</div>
-    <div class="dv-card-text">
-      Please arrive at the theatre exactly <strong>1 hour prior</strong> to your child's scheduled showtime. Ensure they arrive with their hair and makeup already done and dressed in their base costume.
-    </div>
+    <div class="dv-card-title">When should we arrive?</div>
+    <div class="dv-card-text">Please arrive at the theatre exactly <strong>1 hour prior</strong> to your child's scheduled showtime. Ensure they arrive with their hair and makeup already done and dressed in their base costume.</div>
+  </div>
+  <div class="dv-card">
+    <div class="dv-card-title">What should we bring?</div>
+    <div class="dv-card-text">A clearly labelled water bottle and a small <strong>PEANUT-FREE</strong> snack. All items must be packed in a small bag labelled with the dancer's name. A quiet activity (like a book or game) is optional for the dressing room.</div>
+  </div>
+  <div class="dv-card">
+    <div class="dv-card-title">What should we NOT bring?</div>
+    <div class="dv-card-text">Please do not bring large jackets or sweaters into the dressing rooms. Jackets should be handed to parents at the door before entering.</div>
+  </div>
+  <div class="dv-card">
+    <div class="dv-card-title">Need Ballet Shoes & Tights?</div>
+    <div class="dv-card-text">If you are in need of gear, Ballet Shoes ($15) and Ballet Tights ($10) can be purchased in the coming weeks directly at the VPS studios.</div>
   </div>
 
-  <div class="dv-card">
-    <div class="dv-card-title">What to Bring</div>
-    <div class="dv-card-text">
-      A clearly labelled water bottle and a small <strong>PEANUT-FREE</strong> snack. All items must be packed in a small bag labelled with the dancer's name. A quiet activity (like a book or game) is optional for the dressing room.
-    </div>
-  </div>
-
-  <div class="dv-card">
-    <div class="dv-card-title">What NOT to Bring</div>
-    <div class="dv-card-text">
-      Please do not bring large jackets or sweaters into the dressing rooms. Jackets should be handed to parents at the door before entering.
-    </div>
-  </div>
-
-  <div class="dv-card">
-    <div class="dv-card-title">Ballet Shoes & Tights</div>
-    <div class="dv-card-text">
-      If you are in need of gear, Ballet Shoes ($15) and Ballet Tights ($10) can be purchased in the coming weeks directly at the VPS studios.
-    </div>
-  </div>
-
-  <div class="dv-lbl" style="margin-top: 32px;">RESOURCES</div>
+  <div class="dv-lbl">RESOURCES</div>
   <div class="dv-card">
     <div class="dv-card-title">Stage Makeup Tutorial</div>
     <div class="dv-card-text">Watch this quick guide to prepare your dancer's makeup for the bright stage lights.</div>
     <a href="https://www.youtube.com/watch?v=M4qDly8yLKE" target="_blank" class="dv-card-link">Watch on YouTube →</a>
   </div>
+  <div class="dv-card">
+    <div class="dv-card-title">Hair Tutorials</div>
+    <div class="dv-card-text">Learn how to create the perfect hairstyle for your dancer's class.</div>
+    <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Pigtail Low Braids Tutorial →</a>
+    <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Double Pigtail Buns Tutorial →</a>
+    <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">Curls Half Up/Half Down Tutorial →</a>
+    <a href="#" class="dv-card-link" style="display:block; margin-top:8px;">High Sock Bun Tutorial →</a>
+  </div>
+
+  <div class="dv-lbl">HAIR & COSTUME BY CLASS</div>
+  <div class="dv-card" style="padding: 0 16px;">
+    
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">612 Mini Ballet Sat 10:45AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curled low pigtails</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">621 Junior Stars Musical Theatre Wed 3:45PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black/dark indoor runners, black socks, black tshirt, Gold costume</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">610 Junior Ballet Sat 10:00AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">624 Junior Ballet Wed 4:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">603 Junior Hip Hop Mon 3:45PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black shorts, Black Jazz shoes or dark runners, black ankle socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">614 Junior Hip Hop Sat 10:30AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">613 Mini Ballet Sat 11:30AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curls Half Up/Half Down</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">601 Mini Stars Musical Theatre Mon 3:45PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Low Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">634 Preschool Ballet/Acro Combo Fri 1:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> High Sock Bun</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">617 Junior Ballet Sun 10:45AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> High Sock Bun</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">620 Junior Acro Sat 2:15PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curls Half Up/Half Down</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">602 Junior Stars Musical Theatre Mon 4:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black/dark indoor runners, black socks, black tshirt, Gold costume</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">623 Mini Ballet Wed 3:45PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz shoes or dark indoor runners, black ankle socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">Starjump Shine Sat 2:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Purple Dress Bodysuit, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">631 Mini Ballet Mon 10:15AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black shorts, Black Jazz shoes or dark runners, black ankle socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">611 Mini Hip Hop Sat 9:45AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curled low pigtails</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">616 Mini Ballet Sun 10AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black Jazz Shoes, costume provided</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">605 Junior Acro Mon 5:15PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Purple Ballet Dress, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">Starjump Glow Sat 1:00PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black/dark runners, black socks, black tshirt, Gold costume</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">633 Junior Hip Hop Tues 4:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curled high pigtails</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">609 Junior Tap/Jazz Fri 4:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curled high pigtails</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">625 Junior Stars Musical Theatre Mon 3:45PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curls Half Up/Half Down</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black/dark indoor runners, black socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">Starjump Glimmer Sun 11:15AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet, costume provided</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">622 Senior Stars Musical Theatre Wed 4:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curled low ponytail with centre part</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">618 Intermediate Ballet Sun 11:30AM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curled high pigtails</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Doll Tutu Bodysuit, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">Starjump Glow Sun 1:00PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Purple Ballet Dress, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">606 Intermediate Acro Mon 6:00PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Ballet tights, Ballet Shoes</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">607 Senior Acro Mon 7:00PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">628 Senior Acro Sat 3:00PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curled low ponytail with centre part</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">626 Senior Stars Musical Theatre Mon 4:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Double Pigtail Buns</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Bare feet</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">Starjump Shine Sun 2:30PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Pigtail low braids</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Black jazz shoes, black socks</div>
+    </div>
+    <div class="dv-hc-item">
+      <div class="dv-hc-class">604 Senior Hip Hop & Jazz Mon 5:15PM</div>
+      <div class="dv-hc-req"><strong>Hair:</strong> Curled low ponytail with centre part</div>
+      <div class="dv-hc-req"><strong>Costume:</strong> Beige tights and black socks</div>
+    </div>
+
+  </div>
 </div>
 
 <div class="dv-panel" id="p-venues">
   <div class="dv-lbl">THEATRE LOCATIONS</div>
-  
   <div class="dv-card">
-    <div class="dv-card-title">Saturday, June 20</div>
+    <div class="dv-card-title" style="color: var(--brand);">Saturday, June 20</div>
     <div class="dv-card-text" style="font-size: 16px; font-weight: 500; color: var(--w100); margin-bottom: 4px;">VPS Theatre</div>
-    <div class="dv-card-text">
-      114 E 4th Ave<br>
-      Vancouver, BC
-    </div>
+    <div class="dv-card-text">114 E 4th Ave<br>Vancouver, BC</div>
   </div>
-
   <div class="dv-card">
-    <div class="dv-card-title">Sunday, June 21</div>
+    <div class="dv-card-title" style="color: var(--brand);">Sunday, June 21</div>
     <div class="dv-card-text" style="font-size: 16px; font-weight: 500; color: var(--w100); margin-bottom: 4px;">Historic Cultch Theatre</div>
-    <div class="dv-card-text">
-      1895 Venables St<br>
-      Vancouver, BC V5L 2H6
-    </div>
+    <div class="dv-card-text">1895 Venables St<br>Vancouver, BC V5L 2H6</div>
   </div>
 </div>
 
@@ -464,152 +504,85 @@ body {
 </div>
 
 <script>
-/* ── NAVIGATION & UI ── */
 function gp(id){
-  // Manage Main Panels
   ['home','dates','info','venues','search'].forEach(p=>document.getElementById('p-'+p).style.display = p===id?'block':'none');
-  
-  // Manage Main Tabs
   ['home','dates','info','venues','search'].forEach(t=>document.getElementById('pt-'+t).classList.toggle('on',t===id));
-  
-  // Toggle Sub-Nav only if Dates is active
   const subNav = document.getElementById('nav-dates-sub');
   if(id === 'dates') {
     subNav.classList.add('show');
-    // If Dates is clicked from top nav but nothing selected, default to jun20
-    if(!document.getElementById('st-jun21').classList.contains('on')){
-      sd('jun20');
-    }
-  } else {
-    subNav.classList.remove('show');
-  }
-
+    if(!document.getElementById('st-jun21').classList.contains('on')) sd('jun20');
+  } else { subNav.classList.remove('show'); }
   if(id==='search') setTimeout(()=>document.getElementById('sf').focus(),80);
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-/* Switch Dates within the Dates Panel */
 function sd(dateId) {
-  // Toggle Sub-Tabs
-  ['jun20', 'jun21'].forEach(d => {
-    document.getElementById('st-'+d).classList.toggle('on', d === dateId);
-  });
-  // Toggle Containers
+  ['jun20', 'jun21'].forEach(d => document.getElementById('st-'+d).classList.toggle('on', d === dateId));
   ['jun20', 'jun21'].forEach(d => {
     const el = document.getElementById('dates-'+d);
-    if(d === dateId) {
-      el.classList.add('show');
-    } else {
-      el.classList.remove('show');
-    }
+    if(d === dateId) el.classList.add('show'); else el.classList.remove('show');
   });
 }
 
-function tf(btn) {
-  btn.classList.toggle('open');
-  btn.nextElementSibling.classList.toggle('open');
-}
-
+function tf(btn) { btn.classList.toggle('open'); btn.nextElementSibling.classList.toggle('open'); }
 function setMode(m){ 
   document.getElementById('mbtn-dark').classList.toggle('on',m==='dark'); 
   document.getElementById('mbtn-light').classList.toggle('on',m==='light'); 
-  if (m === 'light') document.documentElement.classList.add('light-mode');
-  else document.documentElement.classList.remove('light-mode');
+  if (m === 'light') document.documentElement.classList.add('light-mode'); else document.documentElement.classList.remove('light-mode');
 }
 
-/* ── DATA ── */
 const D = [
-  // SAT JUNE 20 - 10:00 AM
   {s:"s-jun20-10am", t:"In the Golden Afternoon", c:"612 Mini Ballet Sat 10:45AM", cast:"Myra Chen, Isla Chiang, Amelia Coronel, Sophie Costello, Ella Gan, Emerson Graham, Mia McMaster, Neve Wilson, Audrey Jung, Margot Williams"},
   {s:"s-jun20-10am", t:"We’re All Made of Stars", c:"621 Junior Stars Musical Theatre Wed 3:45PM", cast:"Camille Barao, Peyton Bates, Zoey Blazenko, Paige Claassen, Margaret Kelly, Mia Lam, Gemma McArthur, Zoe Rodriguez, Ava Moore"},
   {s:"s-jun20-10am", t:"Flower Fairies", c:"610 Junior Ballet Sat 10:00AM", cast:"Kennedy Fong, Mia Lam, Alice Varnals, Ruby Williams, Poppy Zimmerman, Clara Cautis, Marnie McCormick, Finley Tegler"},
   {s:"s-jun20-10am", t:"Golden", c:"624 Junior Ballet Wed 4:30PM", cast:"Margaret Kelly, Ava Moore, Ellison Royer Deck"},
   {s:"s-jun20-10am", t:"Yodel Beat", c:"603 Junior Hip Hop Mon 3:45PM", cast:"Sierra Down, Goldie Harris, Senna Mai, Olive Brookes, Parker Clarke, Madeline Friesen"},
-
-  // SAT JUNE 20 - 12:00 PM
   {s:"s-jun20-12pm", t:"High Hopes", c:"614 Junior Hip Hop Sat 10:30AM", cast:"Darius Azarbar, Thalia Tsui, Sébastien Skinner-Kanji"},
   {s:"s-jun20-12pm", t:"Swan Lake", c:"613 Mini Ballet Sat 11:30AM", cast:"Carissa Kuo, Eva Mitchell, Sylvie Neve, Lily O’Brien, Avery Ouk, Juliet West, Rosemary Stockley, Elyza Flores, Gerogina Robson"},
   {s:"s-jun20-12pm", t:"Never Fully Dressed Without a Smile", c:"601 Mini Stars Musical Theatre Mon 3:45PM", cast:"Sebastian Briggs, Kyra Fu, Leo Ordish, Georgia Gfrerer, Gabriel Gfrerer, Gordon Gfrerer, Emerson Graham, Brooklyn Malinowski"},
   {s:"s-jun20-12pm", t:"Get Back Up Again", c:"634 Preschool Ballet/Acro Combo Fri 1:30PM", cast:"Noor Abdel-Razzak, Nora Carkner, Luna Diaz, True LeVere, Charlotte Watkins, Georgia Gfrerer, Gordon Gfrerer, Gabriel Gfrerer, Lilyrose Yeung"},
   {s:"s-jun20-12pm", t:"Flower Fairies", c:"617 Junior Ballet Sun 10:45AM", cast:"Maya Goel, Anne Gustafson, Charlotte Gustafson, Paige Tung, Autumn Mosley"},
-
-  // SAT JUNE 20 - 1:30 PM
   {s:"s-jun20-130pm", t:"Firework", c:"620 Junior Acro Sat 2:15PM", cast:"Grace MacNevin, Maya McDonell, Nova Wickman, Zoey Daws, Mattea Foster, Quinn Harrington, Charlotte Manson"},
   {s:"s-jun20-130pm", t:"We’re All Made of Stars", c:"602 Junior Stars Musical Theatre Mon 4:30PM", cast:"Ayla Afra, Charlotte Dekker, Mia Despotovic, Ariane Dubus, Rani Fernandez, Lyla Malchow, Zayan Mawani, Percy Paish, Lola Meredith, Isla Neil, Charlotte Rodriguez, Willa Shupe, Nova Wickman, Justina Wong"},
   {s:"s-jun20-130pm", t:"Birds of a Feather", c:"623 Mini Ballet Wed 3:45PM", cast:"Charlotte Kelly, Abigail Ma, Bobbi Moore, Aria Safarik, Keilani Wong, Sasha Hayden"},
   {s:"s-jun20-130pm", t:"Stronger", c:"Starjump Shine Sat 2:30PM", cast:"Ella Dolman, Mira Langford, Ellie McPherson, Elise Piddocke, Adriana Buvyer"},
-
-  // SAT JUNE 20 - 3:30 PM
   {s:"s-jun20-330pm", t:"Birds of a Feather", c:"631 Mini Ballet Mon 10:15AM", cast:"Siena Smith, Sloane Li, Sophie Loewen, Bronwyn Ellerton-Budarf"},
   {s:"s-jun20-330pm", t:"Good Time", c:"611 Mini Hip Hop Sat 9:45AM", cast:"Charlotte Bromley, Arissa Su, Lennon Wright, Siena Smith, Harper Erlano, Amonee Gill, Freddy Manning"},
   {s:"s-jun20-330pm", t:"Bibbity Bobbity Boo", c:"616 Mini Ballet Sun 10AM", cast:"Abigail Southinavong, Sloane McLeod, Payton Sanchez, Serena Wang, Sadie Weiss, Gemma Wong, Tiger James Lamont, Molly Mangan, Bradley Roberts"},
   {s:"s-jun20-330pm", t:"Firework", c:"605 Junior Acro Mon 5:15PM", cast:"Averie Bach, Aster Chan, Audrey Vogel, Emilia Hillman, Becca Kniewasser, Juno Langford, Cecily Lundeen, Liv Mitchell, Sira Newman-Bremang, Harper Paling"},
   {s:"s-jun20-330pm", t:"Try Everything", c:"Starjump Glow Sat 1:00PM", cast:"Nora Borrelli, Ellie Cullen, Kira Fung, Lucy Henderson, Harper Paling, Emily Wong"},
-
-  // SAT JUNE 20 - 5:00 PM
   {s:"s-jun20-5pm", t:"Takedown", c:"633 Junior Hip Hop Tues 4:30PM", cast:"Lucy Calder, Lou Kohn, Robin McCaskill, Mavlyn McDonald, Anouk Wolber-Rusko, Kynlee Enarson, Annie Philipchalk"},
   {s:"s-jun20-5pm", t:"9 to 5", c:"609 Junior Tap/Jazz Fri 4:30PM", cast:"Eden Barnetson, Ava Fernandez, Avery Pan, Annie Philipchalk, Margot Ting-Depew, Rosalind Beaver"},
   {s:"s-jun20-5pm", t:"When I Grow Up", c:"625 Junior Stars Musical Theatre Mon 3:45PM", cast:"Margot Briggs, Claire Buntain, Kira Durrell, Nika Geipel, Avery Hankinson, Evelyn Kim, Olivia Missirlis, Natalia Rios Stoiaken, Anouk Wolber-Rusko, Iris Zhang"},
   {s:"s-jun20-5pm", t:"Walking On Sunshine", c:"Starjump Glimmer Sun 11:15AM", cast:"Calla Jo Berry, Kirztin Coronel, Ellie Cullen, Madelyn Hong, Isla Neil, Frankie Reimer-Patel, Leia Sauder"},
-
-  // SUN JUNE 21 - 2:00 PM
   {s:"s-jun21-2pm", t:"Get Up", c:"622 Senior Stars Musical Theatre Wed 4:30PM", cast:"Juno Dawe, Julia Johnstone, Mia Kelly, Eleanor Leung, Isabel Mcarthur, Ellie McPherson, Niya Oboni, Daisy Pitout, Aina Regan, Chloe Rodriguez"},
   {s:"s-jun21-2pm", t:"Once Upon a Dream", c:"618 Intermediate Ballet Sun 11:30AM", cast:"Ariane Dubus, Talya Joseph, Taya Willis-Wallace"},
   {s:"s-jun21-2pm", t:"Lush Life", c:"Starjump Glow Sun 1:00PM", cast:"Ameeran Aadmi Sawa, Spencer Alexander, Bailey Cranston, Sophia Dreger, Rebecca Lee, Sydney Livingston, Liv Martin, Ellie Mitchell, Jonah Ng, Eliza Shum, Julia White"},
   {s:"s-jun21-2pm", t:"A Sky Full of Stars", c:"606 Intermediate Acro Mon 6:00PM", cast:"Margot Austin, Talya Joseph, Rose Browes, Wing Ying Savannah Lee, Margot Mah, Manuela Pizarro, Eleanor Sweeney, Sydney Cuthbert"},
   {s:"s-jun21-2pm", t:"Confident", c:"607 Senior Acro Mon 7:00PM", cast:"Sidney Gillespie, Maya Gillespie, Lucy Lanteigne, Catherine Murray, Aina Regan, Marlowe Spanjers, Blythe Sywulych"},
-
-  // SUN JUNE 21 - 5:00 PM
   {s:"s-jun21-5pm", t:"Pure Love", c:"628 Senior Acro Sat 3:00PM", cast:"Cameron Frain Clarke, Maddie Philipchalk, Rachel Voo, Maya Kolinsky, Sawyer Sladen Bennet"},
   {s:"s-jun21-5pm", t:"Don’t Rain On My Parade", c:"626 Senior Stars Musical Theatre Mon 4:30PM", cast:"Cassidy Ageson-Baxter, Ivy Callaghan, Amelie Coulombe, Amaara Garga, Eila Garga, Leona Hadar, Dia Hotson, Mira Langford, Pascale Lavogiez, Ivy Leyne, Anika Vecei, Petra Vecei, Emi-Lou Mendoza"},
   {s:"s-jun21-5pm", t:"Salute", c:"Starjump Shine Sun 2:30PM", cast:"Zoey McAdam, Milei Sauder, Blythe Sywulych, Danica Vuong, Wren Dionne"},
   {s:"s-jun21-5pm", t:"I Just Might", c:"604 Senior Hip Hop & Jazz Mon 5:15PM", cast:"Hailey Anderson, Ruby Blunderfield, Fiona Cindric, Ella Hird, Arianna Hung, Priscila Novelo Olmos, Salomé Raffin, Liberty Mai"}
 ];
 
-function hi(t,q){
-  if(!q||!t) return t||'';
-  return t.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>');
-}
+function hi(t,q){ if(!q||!t) return t||''; return t.replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark>$1</mark>'); }
+function rh(d, i, q){ return `<div class="dv-row"><div class="dv-rnum">${String(i).padStart(2,'0')}</div><div><div class="dv-rtitle">${hi(d.t,q)}</div><div class="dv-rclass">${hi(d.c,q)}</div><div class="dv-cast-list">${hi(d.cast,q)}</div></div></div>`; }
 
-function rh(d, i, q){
-  return `<div class="dv-row">
-    <div class="dv-rnum">${String(i).padStart(2,'0')}</div>
-    <div>
-      <div class="dv-rtitle">${hi(d.t,q)}</div>
-      <div class="dv-rclass">${hi(d.c,q)}</div>
-      <div class="dv-cast-list">${hi(d.cast,q)}</div>
-    </div>
-  </div>`;
-}
-
-/* Render Folders */
 function ra(){
-  ['s-jun20-10am','s-jun20-12pm','s-jun20-130pm','s-jun20-330pm','s-jun20-5pm','s-jun21-2pm','s-jun21-5pm'].forEach(id => {
-    document.getElementById(id).innerHTML = '';
-  });
+  ['s-jun20-10am','s-jun20-12pm','s-jun20-130pm','s-jun20-330pm','s-jun20-5pm','s-jun21-2pm','s-jun21-5pm'].forEach(id => document.getElementById(id).innerHTML = '');
   let counters = {};
-  D.forEach(d => {
-    if(!counters[d.s]) counters[d.s] = 1;
-    document.getElementById(d.s).innerHTML += rh(d, counters[d.s]++, '');
-  });
+  D.forEach(d => { if(!counters[d.s]) counters[d.s] = 1; document.getElementById(d.s).innerHTML += rh(d, counters[d.s]++, ''); });
 }
 
-/* Search Logic */
 function ds(q){
-  const v=q.trim().toLowerCase();
-  const sh=document.getElementById('sh');
-  const nr=document.getElementById('nr');
-  const sr=document.getElementById('sr');
-  
+  const v=q.trim().toLowerCase(), sh=document.getElementById('sh'), nr=document.getElementById('nr'), sr=document.getElementById('sr');
   if(!v){ sr.innerHTML=''; nr.style.display='none'; sh.textContent='24 numbers across all shows'; return; }
-  
   const m=D.filter(d=>[d.t,d.c,d.cast].join(' ').toLowerCase().includes(v));
   sh.textContent=`${m.length} result${m.length!==1?'s':''} for "${q}"`;
   nr.style.display=m.length?'none':'block';
-  
   sr.innerHTML=m.map((d, i)=>rh(d, i+1, v)).join('');
 }
-
 ra();
 </script>
 </body>
