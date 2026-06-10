@@ -16,12 +16,12 @@
 ══════════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #030105; /* Deep Purple/Black */
+  --bg: #030105; 
   --bg2: #090310;
   --bg3: #0f051a;
-  --gold: #d4af37; /* Classic Gold */
-  --gold-dim: #a38628;
-  --gold-faint: #1a1405;
+  --brand: #00c2cb; /* VPS Teal */
+  --brand-dim: #009aa1;
+  --brand-faint: #002b2d;
   --border: #1f1a29;
   --border-mid: #2a2336;
   --w100: #ffffff;
@@ -40,9 +40,9 @@ html.light-mode {
   --bg: #f8f7fa;
   --bg2: #f0eef5;
   --bg3: #e6e3f0;
-  --gold: #a68411; 
-  --gold-dim: #cca114;
-  --gold-faint: #fcf9e8;
+  --brand: #008f96; 
+  --brand-dim: #006f75;
+  --brand-faint: #e0f7f8;
   --border: #d7d3e3;
   --border-mid: #bfb8d1;
   --w100: #140f21; 
@@ -80,7 +80,7 @@ body {
 .dvh-brand { display: flex; align-items: baseline; gap: 5px; }
 .dvh-dv { font-size: 11px; letter-spacing: 0.3em; color: #ffffff; font-weight: 600; }
 .dvh-sep { color: #444; font-size: 10px; }
-.dvh-prog { font-size: 10px; letter-spacing: 0.2em; color: var(--gold); font-weight: 300; }
+.dvh-prog { font-size: 10px; letter-spacing: 0.2em; color: var(--brand); font-weight: 300; }
 .dvh-right { display: flex; gap: 4px; }
 .dv-mbtn {
   font-family: var(--font);
@@ -97,7 +97,7 @@ body {
   appearance: none;
   transition: all 0.2s;
 }
-.dv-mbtn.on { border-color: var(--gold); color: var(--gold); }
+.dv-mbtn.on { border-color: var(--brand); color: var(--brand); }
 
 /* ══════════════════════════════════════
    BANNER
@@ -113,22 +113,13 @@ body {
   justify-content: center;
   border-bottom: 1px solid var(--border);
 }
-/* Placeholder for Banner Image */
 .dv-banner::after {
   content: 'VPS BIG DREAMS BANNER';
   font-size: 14px;
   letter-spacing: 0.2em;
   color: var(--w300);
 }
-.dv-banner img {
-  width: 100%; 
-  height: 100%;
-  object-fit: contain; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-}
+.dv-banner img { width: 100%; height: 100%; object-fit: contain; position: absolute; top: 0; left: 0; display: block; }
 
 /* ══════════════════════════════════════
    EVENT INFO
@@ -140,33 +131,11 @@ body {
   align-items: flex-start;
   gap: 12px;
 }
-.dv-estudio {
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  color: var(--gold);
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-.dv-etitle {
-  font-size: clamp(22px, 6vw, 28px);
-  font-weight: 600;
-  color: var(--w100);
-  line-height: 1.1;
-  margin-bottom: 5px;
-}
-.dv-esub {
-  font-size: 11px;
-  color: var(--w200);
-  line-height: 1.7;
-}
-.dv-event-r {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex-shrink: 0;
-  text-align: right;
-}
-.dv-sval { font-size: 20px; font-weight: 600; color: var(--gold); line-height: 1; }
+.dv-estudio { font-size: 9px; letter-spacing: 0.28em; color: var(--brand); font-weight: 600; margin-bottom: 5px; }
+.dv-etitle { font-size: clamp(22px, 6vw, 28px); font-weight: 600; color: var(--w100); line-height: 1.1; margin-bottom: 5px; }
+.dv-esub { font-size: 11px; color: var(--w200); line-height: 1.7; }
+.dv-event-r { display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; text-align: right; }
+.dv-sval { font-size: 20px; font-weight: 600; color: var(--brand); line-height: 1; }
 .dv-slbl { font-size: 8px; letter-spacing: 0.18em; color: var(--w100); margin-top: 1px; font-weight: 400; }
 
 /* ══════════════════════════════════════
@@ -216,37 +185,16 @@ body {
   -webkit-tap-highlight-color: transparent;
   transition: color 0.2s;
 }
-.dv-ptab {
-  font-size: 10px !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.15em !important;
-  padding: 13px 12px 11px !important;
-  color: var(--w300) !important;
-}
+.dv-ptab { font-size: 10px !important; font-weight: 400 !important; letter-spacing: 0.15em !important; padding: 13px 12px 11px !important; color: var(--w300) !important; }
 .dv-ptab:hover, .dv-ptab:active { color: var(--w200) !important; }
 .dv-ptab.on { color: var(--w100) !important; font-weight: 600 !important; }
 
-.dv-srch {
-  font-size: 10px !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.15em !important;
-  padding: 13px 12px 11px !important;
-  color: var(--w300) !important;
-  display: inline-flex !important;
-  align-items: center;
-  gap: 5px;
-}
+.dv-srch { font-size: 10px !important; font-weight: 400 !important; letter-spacing: 0.15em !important; padding: 13px 12px 11px !important; color: var(--w300) !important; display: inline-flex !important; align-items: center; gap: 5px; }
 .dv-srch:hover, .dv-srch:active { color: var(--w200) !important; }
 .dv-srch.on { color: var(--w100) !important; font-weight: 600 !important; }
 .dv-srch svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; pointer-events: none; }
 
-.dv-stab {
-  font-size: 9px !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.12em !important;
-  padding: 9px 10px 7px !important;
-  color: var(--w300) !important;
-}
+.dv-stab { font-size: 9px !important; font-weight: 400 !important; letter-spacing: 0.12em !important; padding: 9px 10px 7px !important; color: var(--w300) !important; }
 .dv-stab:hover, .dv-stab:active { color: var(--w200) !important; }
 .dv-stab.on { color: var(--w100) !important; font-weight: 600 !important; }
 
@@ -256,112 +204,67 @@ body {
 .dv-panel { display: none; padding: 18px 16px 40px; }
 .dv-panel.show { display: block; }
 
-.dv-lbl {
-  font-size: 8px;
-  letter-spacing: 0.22em;
-  color: var(--gold);
-  font-weight: 600;
-  margin-bottom: 10px;
-  display: block;
-}
+.dv-lbl { font-size: 8px; letter-spacing: 0.22em; color: var(--brand); font-weight: 600; margin-bottom: 10px; display: block; }
+.dv-section-title { font-size: 16px; font-weight: 600; color: var(--w100); margin: 24px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border-mid); }
+.dv-section-title:first-child { margin-top: 0; }
 
 /* ══════════════════════════════════════
-   HOME: WELCOME
+   HOME COMPONENTS
 ══════════════════════════════════════ */
-.dv-wtext {
-  font-size: 13px;
-  color: var(--w200);
-  line-height: 1.9;
-  margin-bottom: 22px;
-  font-style: italic;
+.dv-wtext { font-size: 13px; color: var(--w200); line-height: 1.9; margin-bottom: 22px; font-style: italic; }
+
+/* Home Date Blocks */
+.dv-home-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 32px; }
+.dv-h-act {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; 
+  text-align: center; cursor: pointer; transition: background 0.2s, border-color 0.2s;
 }
+.dv-h-act:active { background: var(--border); }
+.dv-h-act-icon { font-size: 16px; font-weight: 600; color: var(--brand); margin-bottom: 4px; font-style: italic; }
+.dv-h-act-lbl { font-size: 10px; font-weight: 600; letter-spacing: 0.15em; color: var(--w100); }
+
+/* Studio Contact Footer */
+.dv-contact-grid { display: grid; gap: 16px; border-top: 1px solid var(--border); padding-top: 24px; }
+.dv-c-row { display: flex; align-items: flex-start; gap: 12px; font-size: 12px; color: var(--w200); }
+.dv-c-lbl { width: 60px; font-size: 9px; letter-spacing: 0.1em; color: var(--w300); font-weight: 600; text-transform: uppercase; padding-top: 2px; }
+.dv-c-row a { color: var(--brand); text-decoration: none; font-weight: 500; }
 
 /* ══════════════════════════════════════
-   SHOWS PANEL (THE PIVOTED STRUCTURE)
+   DATES / SHOWS PANEL
 ══════════════════════════════════════ */
-.dv-date-heading {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--w100);
-  margin: 24px 0 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border-mid);
-}
-.dv-date-heading:first-child { margin-top: 0; }
+.dv-date-container { display: none; }
+.dv-date-container.show { display: block; }
 
-.dv-show-folder {
-  margin-bottom: 8px;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden;
-}
-.dv-show-btn {
-  width: 100%;
-  text-align: left;
-  background: transparent;
-  border: none;
-  padding: 14px 16px;
-  font-family: var(--font);
-  color: var(--gold);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-.dv-show-btn .arr {
-  font-size: 18px;
-  transition: transform 0.2s;
-  color: var(--w300);
-}
+.dv-show-folder { margin-bottom: 8px; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.dv-show-btn { width: 100%; text-align: left; background: transparent; border: none; padding: 14px 16px; font-family: var(--font); color: var(--brand); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; display: flex; justify-content: space-between; align-items: center; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.dv-show-btn .arr { font-size: 18px; transition: transform 0.2s; color: var(--w300); }
 .dv-show-btn.open .arr { transform: rotate(90deg); }
-
-.dv-show-content {
-  display: none;
-  padding: 0 16px 10px;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-}
+.dv-show-content { display: none; padding: 0 16px 10px; background: var(--bg); border-top: 1px solid var(--border); }
 .dv-show-content.open { display: block; }
 
-.dv-row {
-  display: grid;
-  grid-template-columns: 24px 1fr;
-  gap: 8px;
-  padding: 12px 0;
-  border-bottom: 0.5px solid var(--border);
-  align-items: start;
-}
+.dv-row { display: grid; grid-template-columns: 24px 1fr; gap: 8px; padding: 12px 0; border-bottom: 0.5px solid var(--border); align-items: start; }
 .dv-row:last-child { border-bottom: none; }
-.dv-rnum { font-size: 12px; font-weight: 400; color: var(--gold); padding-top: 1px; }
+.dv-rnum { font-size: 12px; font-weight: 400; color: var(--brand); padding-top: 1px; }
 .dv-rtitle { font-size: 13px; font-weight: 500; color: var(--w100); margin-bottom: 2px; line-height: 1.3; }
-.dv-rtitle mark { background: var(--gold-faint); color: var(--gold); border-radius: 2px; padding: 0 2px; }
+.dv-rtitle mark { background: var(--brand-faint); color: var(--brand); border-radius: 2px; padding: 0 2px; }
 .dv-rclass { font-size: 11px; color: var(--w200); font-weight: 300; line-height: 1.4; }
 .dv-cast-list { font-size: 11px; color: var(--w300); margin-top: 4px; line-height: 1.5; font-style: italic; }
+
+/* ══════════════════════════════════════
+   INFO & VENUES CARDS
+══════════════════════════════════════ */
+.dv-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+.dv-card-title { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; color: var(--brand); margin-bottom: 8px; text-transform: uppercase; }
+.dv-card-text { font-size: 13px; color: var(--w200); line-height: 1.6; }
+.dv-card-link { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--brand); text-decoration: none; font-weight: 500; }
 
 /* ══════════════════════════════════════
    SEARCH
 ══════════════════════════════════════ */
 #p-search { padding: 18px 16px 40px; }
 .dv-sfield-wrap { position: relative; margin-bottom: 8px; }
-.dv-sfield, .dv-sfield:focus {
-  all: unset;
-  display: block;
-  width: 100%;
-  background-color: var(--bg);
-  color: var(--w100);
-  font-family: var(--font);
-  font-size: 14px;
-  padding: 12px 0 12px 26px;
-  border-bottom: 1px solid var(--border-mid);
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
-.dv-sfield:focus { border-bottom-color: var(--gold); }
+.dv-sfield, .dv-sfield:focus { all: unset; display: block; width: 100%; background-color: var(--bg); color: var(--w100); font-family: var(--font); font-size: 14px; padding: 12px 0 12px 26px; border-bottom: 1px solid var(--border-mid); box-sizing: border-box; transition: border-color 0.3s; }
+.dv-sfield:focus { border-bottom-color: var(--brand); }
 .dv-sicon { position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: var(--w300); font-size: 14px; pointer-events: none; }
 .dv-shint { font-size: 10px; color: var(--w300); letter-spacing: 0.04em; margin-bottom: 14px; }
 .dv-nores { text-align: center; padding: 30px; font-size: 14px; color: var(--w300); display: none; }
@@ -369,13 +272,9 @@ body {
 /* ══════════════════════════════════════
    FOOTER
 ══════════════════════════════════════ */
-.dv-foot {
-  background: var(--header-bg);
-  padding: 12px 16px calc(12px + var(--safe-bottom));
-  display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #111;
-}
+.dv-foot { background: var(--header-bg); padding: 12px 16px calc(12px + var(--safe-bottom)); display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #111; }
 .dv-foot-l { font-size: 8px; letter-spacing: 0.2em; color: #666; }
-.dv-foot-g { color: var(--gold); }
+.dv-foot-g { color: var(--brand); }
 .dv-foot-r { font-size: 8px; color: #555; letter-spacing: 0.1em; }
 
 @media (min-width: 600px) {
@@ -398,14 +297,13 @@ body {
   </div>
 </div>
 
-<div class="dv-banner">
-  </div>
+<div class="dv-banner"></div>
 
 <div class="dv-event">
   <div>
     <div class="dv-estudio">VPS</div>
     <div class="dv-etitle">Big Dreams</div>
-    <div class="dv-esub">June 20 - 21, 2026<br>Theatre Location TBA</div>
+    <div class="dv-esub">June 20 - 21, 2026<br>Vancouver, BC</div>
   </div>
   <div class="dv-event-r">
     <div><div class="dv-sval">7</div><div class="dv-slbl">SHOWS</div></div>
@@ -417,8 +315,10 @@ body {
   <div class="dv-nav-row1">
     <div class="dv-nav-left">
       <button class="dv-ptab on" id="pt-home" onclick="gp('home')">HOME</button>
-      <button class="dv-ptab" id="pt-shows" onclick="gp('shows')">SHOWS</button>
-      </div>
+      <button class="dv-ptab" id="pt-dates" onclick="gp('dates')">DATES</button>
+      <button class="dv-ptab" id="pt-info" onclick="gp('info')">+ INFO</button>
+      <button class="dv-ptab" id="pt-venues" onclick="gp('venues')">VENUES</button>
+    </div>
     <div class="dv-nav-right">
       <button class="dv-srch" id="pt-search" onclick="gp('search')">
         <svg viewBox="0 0 16 16"><circle cx="6.5" cy="6.5" r="4.5"/><line x1="10" y1="10" x2="14" y2="14"/></svg>
@@ -426,62 +326,126 @@ body {
       </button>
     </div>
   </div>
+  <div class="dv-nav-row2" id="nav-dates-sub">
+    <button class="dv-stab on" id="st-jun20" onclick="sd('jun20')">/ JUNE 20</button>
+    <button class="dv-stab" id="st-jun21" onclick="sd('jun21')">/ JUNE 21</button>
+  </div>
 </div>
 
 <div class="dv-panel show" id="p-home">
   <div class="dv-lbl">WELCOME</div>
   <div class="dv-wtext">
-    Welcome to the VPS Big Dreams Showcase! 
-    <br><br>
-    Please arrive at the theatre on your performance day with your child's hair and makeup done, in costume with a labelled water bottle, and a small PEANUT FREE snack. ALL your child’s things should come in a clearly labelled small bag with their name on it. Please no big jackets or sweaters.
-    <br><br>
-    We are excited for more performances with our VPS students! See you all very soon!
-    <br><br>
-    - The VPS Team
+    Welcome to the VPS Big Dreams Showcase! We are excited for more performances with our Vancouver Performing Stars students. Select your performance date below to view the schedule.
+  </div>
+
+  <div class="dv-home-actions">
+    <div class="dv-h-act" onclick="gp('dates'); sd('jun20');">
+      <div class="dv-h-act-icon">/</div>
+      <div class="dv-h-act-lbl">JUNE 20</div>
+    </div>
+    <div class="dv-h-act" onclick="gp('dates'); sd('jun21');">
+      <div class="dv-h-act-icon">//</div>
+      <div class="dv-h-act-lbl">JUNE 21</div>
+    </div>
+  </div>
+
+  <div class="dv-contact-grid">
+    <div class="dv-c-row">
+      <div class="dv-c-lbl">Website</div>
+      <div><a href="https://www.performingstars.ca/" target="_blank">performingstars.ca</a></div>
+    </div>
+    <div class="dv-c-row">
+      <div class="dv-c-lbl">Contact</div>
+      <div><a href="mailto:info@performingstars.ca">info@performingstars.ca</a></div>
+    </div>
+    <div class="dv-c-row">
+      <div class="dv-c-lbl">Social</div>
+      <div style="display: flex; gap: 16px;">
+        <a href="https://www.instagram.com/vanperformstars/?hl=en" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/vanperformingstars/" target="_blank">Facebook</a>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="dv-panel" id="p-shows">
+<div class="dv-panel" id="p-dates">
   
-  <div class="dv-date-heading">SATURDAY, JUNE 20</div>
+  <div id="dates-jun20" class="dv-date-container show">
+    <div class="dv-section-title">SATURDAY, JUNE 20</div>
+    <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 1 • 10:00 AM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun20-10am"></div></div>
+    <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 2 • 12:00 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun20-12pm"></div></div>
+    <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 3 • 1:30 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun20-130pm"></div></div>
+    <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 4 • 3:30 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun20-330pm"></div></div>
+    <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 5 • 5:00 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun20-5pm"></div></div>
+  </div>
+
+  <div id="dates-jun21" class="dv-date-container">
+    <div class="dv-section-title">SUNDAY, JUNE 21</div>
+    <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 1 • 2:00 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun21-2pm"></div></div>
+    <div class="dv-show-folder"><button class="dv-show-btn" onclick="tf(this)">SHOW 2 • 5:00 PM <span class="arr">›</span></button><div class="dv-show-content" id="s-jun21-5pm"></div></div>
+  </div>
+
+</div>
+
+<div class="dv-panel" id="p-info">
+  <div class="dv-lbl">PERFORMANCE INFO</div>
   
-  <div class="dv-show-folder">
-    <button class="dv-show-btn" onclick="tf(this)">SHOW 1 • 10:00 AM <span class="arr">›</span></button>
-    <div class="dv-show-content" id="s-jun20-10am"></div>
+  <div class="dv-card">
+    <div class="dv-card-title">Arrival Time</div>
+    <div class="dv-card-text">
+      Please arrive at the theatre exactly <strong>1 hour prior</strong> to your child's scheduled showtime. Ensure they arrive with their hair and makeup already done and dressed in their base costume.
+    </div>
   </div>
 
-  <div class="dv-show-folder">
-    <button class="dv-show-btn" onclick="tf(this)">SHOW 2 • 12:00 PM <span class="arr">›</span></button>
-    <div class="dv-show-content" id="s-jun20-12pm"></div>
+  <div class="dv-card">
+    <div class="dv-card-title">What to Bring</div>
+    <div class="dv-card-text">
+      A clearly labelled water bottle and a small <strong>PEANUT-FREE</strong> snack. All items must be packed in a small bag labelled with the dancer's name. A quiet activity (like a book or game) is optional for the dressing room.
+    </div>
   </div>
 
-  <div class="dv-show-folder">
-    <button class="dv-show-btn" onclick="tf(this)">SHOW 3 • 1:30 PM <span class="arr">›</span></button>
-    <div class="dv-show-content" id="s-jun20-130pm"></div>
+  <div class="dv-card">
+    <div class="dv-card-title">What NOT to Bring</div>
+    <div class="dv-card-text">
+      Please do not bring large jackets or sweaters into the dressing rooms. Jackets should be handed to parents at the door before entering.
+    </div>
   </div>
 
-  <div class="dv-show-folder">
-    <button class="dv-show-btn" onclick="tf(this)">SHOW 4 • 3:30 PM <span class="arr">›</span></button>
-    <div class="dv-show-content" id="s-jun20-330pm"></div>
+  <div class="dv-card">
+    <div class="dv-card-title">Ballet Shoes & Tights</div>
+    <div class="dv-card-text">
+      If you are in need of gear, Ballet Shoes ($15) and Ballet Tights ($10) can be purchased in the coming weeks directly at the VPS studios.
+    </div>
   </div>
 
-  <div class="dv-show-folder">
-    <button class="dv-show-btn" onclick="tf(this)">SHOW 5 • 5:00 PM <span class="arr">›</span></button>
-    <div class="dv-show-content" id="s-jun20-5pm"></div>
+  <div class="dv-lbl" style="margin-top: 32px;">RESOURCES</div>
+  <div class="dv-card">
+    <div class="dv-card-title">Stage Makeup Tutorial</div>
+    <div class="dv-card-text">Watch this quick guide to prepare your dancer's makeup for the bright stage lights.</div>
+    <a href="https://www.youtube.com/watch?v=M4qDly8yLKE" target="_blank" class="dv-card-link">Watch on YouTube →</a>
+  </div>
+</div>
+
+<div class="dv-panel" id="p-venues">
+  <div class="dv-lbl">THEATRE LOCATIONS</div>
+  
+  <div class="dv-card">
+    <div class="dv-card-title">Saturday, June 20</div>
+    <div class="dv-card-text" style="font-size: 16px; font-weight: 500; color: var(--w100); margin-bottom: 4px;">VPS Theatre</div>
+    <div class="dv-card-text">
+      114 E 4th Ave<br>
+      Vancouver, BC
+    </div>
   </div>
 
-  <div class="dv-date-heading" style="margin-top: 32px;">SUNDAY, JUNE 21</div>
-
-  <div class="dv-show-folder">
-    <button class="dv-show-btn" onclick="tf(this)">SHOW 1 • 2:00 PM <span class="arr">›</span></button>
-    <div class="dv-show-content" id="s-jun21-2pm"></div>
+  <div class="dv-card">
+    <div class="dv-card-title">Sunday, June 21</div>
+    <div class="dv-card-text" style="font-size: 16px; font-weight: 500; color: var(--w100); margin-bottom: 4px;">Historic Cultch Theatre</div>
+    <div class="dv-card-text">
+      1895 Venables St<br>
+      Vancouver, BC V5L 2H6
+    </div>
   </div>
-
-  <div class="dv-show-folder">
-    <button class="dv-show-btn" onclick="tf(this)">SHOW 2 • 5:00 PM <span class="arr">›</span></button>
-    <div class="dv-show-content" id="s-jun21-5pm"></div>
-  </div>
-
 </div>
 
 <div id="p-search" style="display:none">
@@ -502,10 +466,43 @@ body {
 <script>
 /* ── NAVIGATION & UI ── */
 function gp(id){
-  ['home','shows','search'].forEach(p=>document.getElementById('p-'+p).style.display = p===id?'block':'none');
-  ['home','shows','search'].forEach(t=>document.getElementById('pt-'+t).classList.toggle('on',t===id));
+  // Manage Main Panels
+  ['home','dates','info','venues','search'].forEach(p=>document.getElementById('p-'+p).style.display = p===id?'block':'none');
+  
+  // Manage Main Tabs
+  ['home','dates','info','venues','search'].forEach(t=>document.getElementById('pt-'+t).classList.toggle('on',t===id));
+  
+  // Toggle Sub-Nav only if Dates is active
+  const subNav = document.getElementById('nav-dates-sub');
+  if(id === 'dates') {
+    subNav.classList.add('show');
+    // If Dates is clicked from top nav but nothing selected, default to jun20
+    if(!document.getElementById('st-jun21').classList.contains('on')){
+      sd('jun20');
+    }
+  } else {
+    subNav.classList.remove('show');
+  }
+
   if(id==='search') setTimeout(()=>document.getElementById('sf').focus(),80);
   window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* Switch Dates within the Dates Panel */
+function sd(dateId) {
+  // Toggle Sub-Tabs
+  ['jun20', 'jun21'].forEach(d => {
+    document.getElementById('st-'+d).classList.toggle('on', d === dateId);
+  });
+  // Toggle Containers
+  ['jun20', 'jun21'].forEach(d => {
+    const el = document.getElementById('dates-'+d);
+    if(d === dateId) {
+      el.classList.add('show');
+    } else {
+      el.classList.remove('show');
+    }
+  });
 }
 
 function tf(btn) {
@@ -521,7 +518,6 @@ function setMode(m){
 }
 
 /* ── DATA ── */
-// Note: 's' is the target div ID. 
 const D = [
   // SAT JUNE 20 - 10:00 AM
   {s:"s-jun20-10am", t:"In the Golden Afternoon", c:"612 Mini Ballet Sat 10:45AM", cast:"Myra Chen, Isla Chiang, Amelia Coronel, Sophie Costello, Ella Gan, Emerson Graham, Mia McMaster, Neve Wilson, Audrey Jung, Margot Williams"},
@@ -588,14 +584,10 @@ function rh(d, i, q){
 
 /* Render Folders */
 function ra(){
-  // Clear all divs first
   ['s-jun20-10am','s-jun20-12pm','s-jun20-130pm','s-jun20-330pm','s-jun20-5pm','s-jun21-2pm','s-jun21-5pm'].forEach(id => {
     document.getElementById(id).innerHTML = '';
   });
-  
-  // Group logic counters
   let counters = {};
-  
   D.forEach(d => {
     if(!counters[d.s]) counters[d.s] = 1;
     document.getElementById(d.s).innerHTML += rh(d, counters[d.s]++, '');
@@ -615,11 +607,9 @@ function ds(q){
   sh.textContent=`${m.length} result${m.length!==1?'s':''} for "${q}"`;
   nr.style.display=m.length?'none':'block';
   
-  // Render search results without folder grouping
   sr.innerHTML=m.map((d, i)=>rh(d, i+1, v)).join('');
 }
 
-// Initial render
 ra();
 </script>
 </body>
